@@ -27,7 +27,7 @@ export default function PresencePage() {
             <body className="bg-white min-height-full" style={{ backgroundColor: "#000000!important" }}>
                 <div className="d-md-flex min-height-full">
                     <div className="flex-self-stretch bg-gray-dark col-md-5 col-lg-4 col-xl-3 px-4 px-md-6 px-lg-7 py-6" style={{ borderRight: '1px solid #181818' }}>
-                        <img src="https://i.imgur.com/vwFm1ml.jpg" className="circle mb-3" style={{ maxWidth: '220px' }} title="" />
+                        <img src="https://i.imgur.com/i9LYbtF.jpg" className="circle mb-3" style={{ maxWidth: '220px' }} title="" />
                         <h1 className="text-white mb-2 lh-condensed">Fernando Oliveira</h1>
                         <p className="mb-3 f4 text-white">
                             A self-taught full-stack developer
