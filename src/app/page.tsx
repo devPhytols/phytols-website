@@ -62,8 +62,8 @@ export default function Home() {
                                         </path>
                                     </g>
                                 </svg>
-                                <a href="mailto:devphytols@gmail.com" className="text-white">
-                                    devphytols@gmail.com
+                                <a href="mailto:contato@phytols.dev" className="text-white">
+                                    contato@phytols.dev
                                 </a>
                             </div>
                             <div className="d-flex flex-items-center mb-3 text-white">
