@@ -26,7 +26,7 @@ export default function Home() {
             <body className="bg-white min-height-full" style={{ backgroundColor: "#000000!important" }}>
                 <div className="d-md-flex min-height-full">
                     <div className="flex-self-stretch bg-gray-dark col-md-5 col-lg-4 col-xl-3 px-4 px-md-6 px-lg-7 py-6" style={{ borderRight: '1px solid #181818' }}>
-                        <img src="https://i.imgur.com/cPkeMet.jpg" className="circle mb-3" style={{ maxWidth: '220px' }} title="" />
+                        <img src="https://i.pinimg.com/736x/10/d8/5e/10d85ed6fd6c4458b7b6b09b84f43d7b.jpg" className="circle mb-3" style={{ maxWidth: '220px' }} title="" />
                         <h1 className="text-white mb-2 lh-condensed">Fernando Oliveira</h1>
                         <p className="mb-3 f4 text-white">
                             A self-taught full-stack developer
