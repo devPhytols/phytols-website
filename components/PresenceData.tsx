@@ -85,7 +85,7 @@ const LanyardDataClient: React.FC<LanyardDataProps> = ({ userId }) => {
                       <div className="ifqszt">
                         <img
                           src={activity.assets && activity.assets.large_image
-                            ? `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.png`
+                            ? `${activity.assets.large_image}`
                             : 'https://i.imgur.com/p7oEqET.png'}
                           className="sc-qRumB flUrJQ"
                           width="90"
