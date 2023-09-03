@@ -88,7 +88,7 @@ const LanyardDataClient: React.FC<LanyardDataProps> = ({ userId }) => {
                       <div className="ifqszt">
                         <img
                           src={activity.assets && activity.assets.large_image
-                            ? `https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/${activity.details.endsWith("ts") ? 'ts' || 'tsx' : 'js'}.png`
+                            ? `https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/${activity.details.endsWith("ts") ? 'ts' : 'tsx'}.png`
                             : 'https://i.imgur.com/p7oEqET.png'}
                           className="sc-qRumB flUrJQ"
                           width="90"
