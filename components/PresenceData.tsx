@@ -46,7 +46,10 @@ const LanyardDataClient: React.FC<LanyardDataProps> = ({ userId }) => {
       });
   }, [userId]);
 
+  let lang: any;
+
   return (
+    
     <div>
       {!data ? (
         <p style={{ fontSize: "12px", color: "rgba(99, 99, 99, 0.855)" }}>Carregando Informações...</p>
@@ -85,7 +88,7 @@ const LanyardDataClient: React.FC<LanyardDataProps> = ({ userId }) => {
                       <div className="ifqszt">
                         <img
                           src={activity.assets && activity.assets.large_image
-                            ? `${activity.assets?.large_image}`
+                            ? `https://raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/${activity.details.endsWith("ts") ? 'ts' || 'tsx' : 'js'}.png`
                             : 'https://i.imgur.com/p7oEqET.png'}
                           className="sc-qRumB flUrJQ"
                           width="90"
