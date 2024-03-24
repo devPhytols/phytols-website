@@ -7,6 +7,11 @@ import { useState, useEffect } from 'react';
 import IndexDataFetch from '../../components/IndexDataFetch';
 import '../../public/assets/css/extra.css'
 
+interface CurrentQuote {
+    quote: string;
+    author: string;
+}
+
 export default function Home() {
     const quotes = [
         { quote: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
@@ -19,16 +24,16 @@ export default function Home() {
         { quote: "It is during our darkest moments that we must focus to see the light.", author: "Aristotle" },
         { quote: "The difference between ordinary and extraordinary is that little extra.", author: "Jimmy Johnson" },
         { quote: "Be the change that you wish to see in the world.", author: "Mahatma Gandhi" },
-        { quote: "Live as if you were to die tomorrow. Learn as if you were to live forever.", author: "Mahatma Gandhi"},
+        { quote: "Live as if you were to die tomorrow. Learn as if you were to live forever.", author: "Mahatma Gandhi" },
         { quote: "Logic will get you from A to B. Imagination will take you everywhere.", author: "Albert Einstein" },
         { quote: "The only true wisdom is in knowing you know nothing.", author: "Socrates" },
-        { quote: "Happiness is not something ready-made. It comes from your own actions.", author: "Dalai Lama" }, 
-        { quote: "All our dreams can come true, if we have the courage to pursue them.", author: "Walt Disney"},
-        { quote: "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that.", author: "Martin Luther King Jr."},
-        { quote: "Don't let yesterday take up too much of today.", author: "Will Rogers" },  
+        { quote: "Happiness is not something ready-made. It comes from your own actions.", author: "Dalai Lama" },
+        { quote: "All our dreams can come true, if we have the courage to pursue them.", author: "Walt Disney" },
+        { quote: "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate: only love can do that.", author: "Martin Luther King Jr." },
+        { quote: "Don't let yesterday take up too much of today.", author: "Will Rogers" },
         { quote: "If you want to live a happy life, tie it to a goal, not to people or things.", author: "Albert Einstein" },
         { quote: "The person who reads too much and uses his brain too little will fall into lazy habits of thinking.", author: "Albert Einstein" },
-        { quote: "Insanity is doing the same thing, over and over again, but expecting different results.", author: "Often attributed to Einstein, but likely derived from Narcotics Anonymous"},  
+        { quote: "Insanity is doing the same thing, over and over again, but expecting different results.", author: "Often attributed to Einstein, but likely derived from Narcotics Anonymous" },
         { quote: "Twenty years from now you will be more disappointed by the things that you didn't do than by the ones you did do.", author: "Mark Twain" },
         { quote: "The real voyage of discovery consists not in seeking new landscapes, but in having new eyes.", author: "Marcel Proust" },
         { quote: "You can never cross the ocean until you have the courage to lose sight of the shore.", author: "Christopher Columbus" },
@@ -36,8 +41,8 @@ export default function Home() {
         { quote: "Build your own dreams, or someone else will hire you to build theirs.", author: "Farrah Gray" },
         { quote: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
         { quote: "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.", author: "Thomas A. Edison" },
-        { quote: "In the end, we only regret the chances we didn't take.", author: "Lewis Carroll" }, 
-        { quote: "Life is what happens when you're busy making other plans.", author: "John Lennon" }, 
+        { quote: "In the end, we only regret the chances we didn't take.", author: "Lewis Carroll" },
+        { quote: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
         { quote: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela" },
         { quote: "The world is a book and those who do not travel read only one page.", author: "Saint Augustine" },
         { quote: "A ship in harbor is safe, but that is not what ships are built for.", author: "John A. Shedd" },
@@ -49,15 +54,15 @@ export default function Home() {
         { quote: "The information is not knowledge. The knowledge is not wisdom. The wisdom is not truth.", author: "Frank Zappa" },
         { quote: "If you cannot do great things, do small things in a great way.", author: "Napoleon Hill" },
         { quote: "Change your thoughts and you change your world.", author: "Norman Vincent Peale" },
-        { quote: "Information is power. But like all power, there are those who want to keep it for themselves.", author: "Aaron Swartz" }, 
+        { quote: "Information is power. But like all power, there are those who want to keep it for themselves.", author: "Aaron Swartz" },
         { quote: "It's not OK to violate the privacy of ordinary people because the powerful might break the law.", author: "Aaron Swartz" },
-        { quote: "Think deeply about things. Don't just go along because that's the way things are or that's what your friends say. Consider the effects, consider the alternatives, but most importantly, just think.", author: "Aaron Swartz"}
+        { quote: "Think deeply about things. Don't just go along because that's the way things are or that's what your friends say. Consider the effects, consider the alternatives, but most importantly, just think.", author: "Aaron Swartz" }
     ];
-    
+
 
     var initialQuote;
 
-    const [currentQuote, setCurrentQuote] = useState(initialQuote);
+    const [currentQuote, setCurrentQuote] = useState<CurrentQuote | undefined>(initialQuote); 
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
