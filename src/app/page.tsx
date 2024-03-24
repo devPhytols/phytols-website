@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import IndexDataFetch from '../../components/IndexDataFetch';
 import '../../public/assets/css/extra.css'
 
-export default function Home({ initialQuote }: { initialQuote: any }) {
+export default function Home({ initialQuote }: { initialQuote: string }) {
     const quotes = [
         { quote: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
         { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
