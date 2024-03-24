@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 import IndexDataFetch from '../../components/IndexDataFetch';
 import '../../public/assets/css/extra.css'
 
-export default function Home({ initialQuote }: { initialQuote: string }) {
+export default function Home() {
     const quotes = [
         { quote: "Success is the sum of small efforts, repeated day in and day out.", author: "Robert Collier" },
         { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
@@ -54,6 +54,8 @@ export default function Home({ initialQuote }: { initialQuote: string }) {
         { quote: "Think deeply about things. Don't just go along because that's the way things are or that's what your friends say. Consider the effects, consider the alternatives, but most importantly, just think.", author: "Aaron Swartz"}
     ];
     
+
+    var initialQuote;
 
     const [currentQuote, setCurrentQuote] = useState(initialQuote);
     const [isLoading, setIsLoading] = useState(false);
