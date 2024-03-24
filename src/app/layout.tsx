@@ -1,8 +1,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Fernando Oliveira',
-  description: 'A self-taught full-stack developer',
+  title: 'Fernando Oliveira • Phytols',
+  description: 'A self-taught full-stack developer'
 }
 
 export default function RootLayout({

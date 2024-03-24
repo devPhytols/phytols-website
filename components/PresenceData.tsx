@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 // import Link from 'next/link';
 
 interface LanyardDataProps {
@@ -77,7 +78,7 @@ const LanyardDataClient: React.FC<LanyardDataProps> = ({ userId }) => {
           )}
 
           {data.activities && data.activities.length > 0 ? (
-            <a href="/presence" style={{ textDecoration: 'none' }}>
+            <Link href="/presence" as="/presence" style={{ textDecoration: 'none' }}>
               <div>
               {data.activities
                 .filter(activity => activity.type === 0)
@@ -104,7 +105,7 @@ const LanyardDataClient: React.FC<LanyardDataProps> = ({ userId }) => {
                   </a>
                 ))}
             </div>
-            </a>
+            </Link>
           ) : (
             ""
           )}
