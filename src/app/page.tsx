@@ -62,7 +62,7 @@ export default function Home() {
 
     var initialQuote;
 
-    const [currentQuote, setCurrentQuote] = useState<CurrentQuote | undefined>(initialQuote); 
+    const [currentQuote, setCurrentQuote] = useState<CurrentQuote | undefined>(initialQuote);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
@@ -103,6 +103,24 @@ export default function Home() {
             setIsLoading(false);
         };
 
+        function autoTypeTitle() {
+            const title = document.title; // Obtém o título da página
+            let i = 0; // Contador para a posição do caractere
+            const symbols = ["$", "/", "\\", "$", "|"];
+
+            const interval = setInterval(() => {
+                if (i < title.length) {
+                    const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+                    document.title = title.substring(0, i) + randomSymbol;
+                    i++;
+                } else {
+                    clearInterval(interval);
+                    document.title = title; // Remove o caractere especial
+                    setTimeout(autoTypeTitle, 500); // Aguarda 3 segundos antes de reiniciar
+                }
+            }, 300);
+        };
+        autoTypeTitle();
         fetchRandomQuote();
     }, []);
 
