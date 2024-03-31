@@ -126,9 +126,6 @@ export default function Home() {
 
     return (
         <>
-            <Head>
-                <title>Success is the sum of small efforts</title>
-            </Head>
             <IndexDataFetch userId="236651138747727872" />
             <div className="container">
                 <div className="card">
