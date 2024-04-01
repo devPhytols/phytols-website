@@ -97,15 +97,14 @@ export default function Home() {
 
         const fetchRandomQuote = () => {
             setIsLoading(true);
-            // Troque por lógica simples para teste
             const randomIndex = Math.floor(Math.random() * quotes.length);
             setCurrentQuote(quotes[randomIndex]);
             setIsLoading(false);
         };
 
         function autoTypeTitle() {
-            const title = document.title; // Obtém o título da página
-            let i = 0; // Contador para a posição do caractere
+            const title = document.title;
+            let i = 0;
             const symbols = ["$", "/", "\\", "$", "|"];
 
             const interval = setInterval(() => {
@@ -115,8 +114,8 @@ export default function Home() {
                     i++;
                 } else {
                     clearInterval(interval);
-                    document.title = title; // Remove o caractere especial
-                    setTimeout(autoTypeTitle, 500); // Aguarda 3 segundos antes de reiniciar
+                    document.title = title;
+                    setTimeout(autoTypeTitle, 500);
                 }
             }, 300);
         };
@@ -129,10 +128,10 @@ export default function Home() {
             <IndexDataFetch userId="236651138747727872" />
             <div className="container">
                 <div className="card">
-                    {/* Exiba a frase e o autor */}
+                    {/* Verificação Adicional */}
                     {isLoading ? (
                         <p>Carregando...</p>
-                    ) : currentQuote ? ( // Verifique `currentQuote` explicitamente
+                    ) : currentQuote ? (
                         <>
                             <h1>{currentQuote.quote}</h1>
                             <p>- {currentQuote.author}</p>
@@ -140,7 +139,7 @@ export default function Home() {
                                 Continuar <FontAwesomeIcon icon={faArrowAltCircleRight} style={{ fontSize: 14, color: "rgba(235, 36, 109, 0.788)" }} />
                             </Link>
                         </>
-                    ) : null // Ou retorne `null` para não renderizar nada
+                    ) : null
                     }
                 </div>
             </div>
