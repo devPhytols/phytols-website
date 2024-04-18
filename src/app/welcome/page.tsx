@@ -28,7 +28,7 @@ export default function Home() {
                 <div className="d-md-flex min-height-full">
                     <div className="flex-self-stretch bg-gray-dark col-md-5 col-lg-4 col-xl-3 px-4 px-md-6 px-lg-7 py-6" style={{ borderRight: '1px solid #181818' }}>
                         <Image
-                            src="https://i.imgur.com/2HtWKIa.png"
+                            src="https://i.imgur.com/uBUUBH1.jpeg"
                             alt="Success is the sum of small efforts"
                             className="circle mb-3"
                             width={250}
