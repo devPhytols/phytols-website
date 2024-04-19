@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
-// import Link from 'next/link';
+import Image from 'next/image';
+import { Tilt } from 'react-next-tilt';
 
 interface LanyardDataProps {
     userId: string;
@@ -11,6 +12,10 @@ interface Resp {
     username: string;
     discriminator: string;
     discord_user: {
+        avatar_decoration_data: {
+            asset: string,
+            sku_id: number
+        },
         username: string;
         discriminator: string;
         avatar: string;
@@ -54,39 +59,55 @@ const LanyardDataClient: React.FC<LanyardDataProps> = ({ userId }) => {
                 <div>
                     {data.activities && data.activities.length > 0 ? (
                         <div>
-                            <a className="presence-block" style={{ display: "block" }}>
-                                <h3>Meu Discord é {data.discord_user.username}#<span style={{ color: 'rgba(232, 54, 119, 0.893)' }}>{data.discord_user.discriminator}</span></h3>
-                                <div style={{ border: 'solid 2px #181818', borderRadius: '15px', padding: '1.2em 1em 1em' }}>
-                                    <div className="presence-d1">
-                                        <div className="presence-c" style={{ position: "relative" }}>
-                                            <img
-                                                src={`https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png?size=1024`}
-                                                className="sc-qRumB flUrJQ"
-                                                width="150"
-                                                height="150"
-                                                draggable="false"
-                                            />
-                                            <div id='circulo' style={{
-                                                position: "absolute",
-                                                bottom: "0",
-                                                right: "calc(5px - 10px)",
-                                                backgroundColor:
-                                                    data.discord_status === "online"
-                                                        ? "#2ad146"
-                                                        : data.discord_status === "dnd"
-                                                            ? "#f73131"
-                                                            : data.discord_status === "idle"
-                                                                ? "#f7af31"
-                                                                : "",
-                                            }}></div>
-                                        </div>
-                                        <div className="presence-dt">
-                                            <h5>N/A</h5>
-                                            <p>Não foi possível obter dados da API.</p>
+                            <Tilt>
+                                <a className="presence-block" style={{ display: "block" }}>
+                                    <br></br>
+                                    <div style={{ border: 'solid 2px #181818', borderRadius: '15px', padding: '1.2em 1em 1em' }}>
+                                        <div className="presence-d1">
+                                            <div className="presence-c" style={{ position: "relative" }}>
+                                                <div className="presence-c" style={{ position: "relative" }}>
+                                                    {data?.discord_user?.avatar_decoration_data?.asset ? (
+                                                        <Image
+                                                            className="avatar-decoration"
+                                                            style={{ position: 'absolute', top: -15, left: -15 }}
+                                                            src={`https://cdn.discordapp.com/avatar-decoration-presets/${data?.discord_user?.avatar_decoration_data?.asset}.png`}
+                                                            width={150}
+                                                            height={150}
+                                                            alt="Success is the sum of small efforts"
+                                                        />
+                                                    ) : null}
+                                                    <Image
+                                                        src={`https://cdn.discordapp.com/avatars/${data.discord_user.id}/${data.discord_user.avatar}.png?size=1024`}
+                                                        alt="Success is the sum of small efforts"
+                                                        className="sc-qRumB flUrJQ"
+                                                        width={120}
+                                                        height={120}
+                                                        title=""
+                                                        draggable="false"
+                                                    />
+                                                </div>
+                                                <div id='circulo' style={{
+                                                    position: "absolute",
+                                                    bottom: "0",
+                                                    right: "calc(50px - 45px)",
+                                                    backgroundColor:
+                                                        data.discord_status === "online"
+                                                            ? "#2ad146"
+                                                            : data.discord_status === "dnd"
+                                                                ? "#f73131"
+                                                                : data.discord_status === "idle"
+                                                                    ? "#f7af31"
+                                                                    : "",
+                                                }}></div>
+                                            </div>
+                                            <div className="presence-dt">
+                                                <h5>N/A</h5>
+                                                <p>Não foi possível obter dados da API.</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </Tilt>
                         </div>
                     ) : (
                         <div className='presence-details'>

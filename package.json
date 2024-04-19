@@ -29,6 +29,7 @@
     "postcss": "8.4.23",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-next-tilt": "^0.4.3",
     "react-spotify-web-playback": "^0.14.3",
     "spotify-web-playback-sdk-for-react": "^2.0.3",
     "swr": "^2.1.5",
